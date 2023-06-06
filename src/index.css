@@ -8,11 +8,17 @@
   background-color: #f2f2f2;
   padding-left: 40px;
   /* Add left padding for centering effect */
+  background-image: url("background.jpg");
 }
 
 .data-item {
   margin-bottom: 20px;
   font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px 15px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 20px;
 }
 
 .led-on {

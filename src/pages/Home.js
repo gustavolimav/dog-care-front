@@ -1,6 +1,6 @@
 // Home.js
-import React, { useState, useEffect } from 'react';
-import { getData } from '../data/data';
+import React, { useState, useEffect } from "react";
+import { getData } from "../data/data";
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -12,7 +12,7 @@ const Home = () => {
       setData(result);
       setLoading(false);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
       setLoading(false);
     }
   };
@@ -34,15 +34,24 @@ const Home = () => {
     return <p>No data available.</p>;
   }
 
-  const dataRefs = ["Led Vermelha", "Led Amarela", "Led Verde", "Buzzer", "microfone"]
+  const dataRefs = [
+    "Led Vermelha",
+    "Led Amarela",
+    "Led Verde",
+    "Buzzer",
+    "Microfone",
+  ];
 
   return (
     <div className="home-container">
       {data.map((value, index) => (
         <div key={index} className="data-item">
-          {dataRefs[index] !== 'microfone' ? (
+          {dataRefs[index] !== "Microfone" ? (
             <h1>
-              {dataRefs[index]}: <span className={value ? 'led-on' : 'led-off'}>{value ? 'ON' : 'OFF'}</span>
+              {dataRefs[index]}:{" "}
+              <span className={value ? "led-on" : "led-off"}>
+                {value ? "ON" : "OFF"}
+              </span>
             </h1>
           ) : (
             <h1>
@@ -56,7 +65,6 @@ const Home = () => {
         <button onClick={handleRefresh}>Refresh</button>
       </div>
     </div>
-
   );
 };
 
